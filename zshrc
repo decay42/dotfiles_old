@@ -13,6 +13,7 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+
 autoload -U compinit url-quote-magic
 compinit
 
@@ -66,7 +67,6 @@ weather() {
   sh -c "curl \"http://wttr.in/$1\""
 }
 
-source $HOME/.aliases
 
 DIRSTACKSIZE=9
 DIRSTACKFILE=~/.zdirs
@@ -77,3 +77,12 @@ fi
 chpwd() {
   print -l $PWD ${(u)dirstack} >$DIRSTACKFILE
 }
+
+if [ -f $HOME/.aliases ]; then
+  source $HOME/.aliases
+fi
+
+if [ -f $HOME/.local_dotfile ]; then
+  source $HOME/.local_dotfile
+fi
+
