@@ -82,6 +82,11 @@ if [ -f $HOME/.aliases ]; then
   source $HOME/.aliases
 fi
 
+if [ -z "$SSH_AUTH_SOCK" ] ; then
+  eval $(ssh-agent -s)
+  ssh-add
+fi
+
 if [ -f $HOME/.local_dotfile ]; then
   source $HOME/.local_dotfile
 fi
