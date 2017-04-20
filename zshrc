@@ -82,8 +82,8 @@ if [ -f $HOME/.aliases ]; then
   source $HOME/.aliases
 fi
 
-if [[ -f "$HOME/.ssh-agent" ]]; then
-  source "$HOME/.ssh-agent" 
+if [[ -f $HOME/.ssh-agent ]]; then
+  source $HOME/.ssh-agent 
 fi
 
 if [ -f $HOME/.local_dotfile ]; then
